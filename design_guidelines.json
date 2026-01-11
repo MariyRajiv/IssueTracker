@@ -1,0 +1,214 @@
+{
+  "identity": {
+    "persona": "E1: The Anti-AI Designer",
+    "mission": "Create a top 1% design that breaks category conventions using fusion, emotion, and negative space.",
+    "principles": [
+      "Fusion over Imitation",
+      "Emotion First",
+      "Content is King",
+      "Zoom In",
+      "Negative Space",
+      "Contrast"
+    ],
+    "anti_patterns": [
+      "Purple/Teal for CTA",
+      "Inter for Headings",
+      "Center-Everything",
+      "Gradient Overload"
+    ]
+  },
+  "design_context": {
+    "type": "Dashboard / Admin Panel",
+    "theme": "Light (Professional/Corporate)",
+    "archetype": "Swiss & High-Contrast",
+    "vibe": "Objective, Rigid, Functional, Authoritative",
+    "target_audience": "Development teams, Project Managers"
+  },
+  "typography": {
+    "fonts": {
+      "headings": {
+        "family": "Manrope, sans-serif",
+        "url": "https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap",
+        "usage": "All headings (h1-h6), big stats, navigation links",
+        "weights": ["600", "700", "800"]
+      },
+      "body": {
+        "family": "Inter, sans-serif",
+        "url": "https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap",
+        "usage": "Paragraphs, inputs, table data, small labels",
+        "weights": ["400", "500"]
+      },
+      "mono": {
+        "family": "JetBrains Mono, monospace",
+        "url": "https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap",
+        "usage": "Code snippets, issue IDs (e.g., ISS-123), technical data",
+        "weights": ["400", "500"]
+      }
+    },
+    "rules": [
+      "Headings > 32px must use tracking-tight",
+      "Overlines/Labels must be Uppercase + Tiny (text-xs) + Wide Spacing (tracking-widest)",
+      "Line height: leading-none for headers, leading-relaxed for body",
+      "Never use Inter for Headings"
+    ]
+  },
+  "colors": {
+    "palette": {
+      "base": {
+        "background": "#ffffff",
+        "foreground": "#0f172a",
+        "surface": "#f8fafc",
+        "surface_highlight": "#f1f5f9"
+      },
+      "primary": {
+        "default": "#0f172a",
+        "foreground": "#ffffff",
+        "hover": "#1e293b"
+      },
+      "accent": {
+        "blue": "#2563eb",
+        "orange": "#f97316",
+        "green": "#16a34a",
+        "red": "#dc2626"
+      },
+      "border": {
+        "default": "#e2e8f0",
+        "strong": "#cbd5e1"
+      },
+      "muted": {
+        "default": "#f1f5f9",
+        "foreground": "#64748b"
+      }
+    },
+    "semantic_mapping": {
+      "status_open": "text-blue-600 bg-blue-50 border-blue-200",
+      "status_in_progress": "text-orange-600 bg-orange-50 border-orange-200",
+      "status_done": "text-green-600 bg-green-50 border-green-200",
+      "status_closed": "text-slate-600 bg-slate-50 border-slate-200",
+      "priority_high": "text-red-600",
+      "priority_medium": "text-orange-600",
+      "priority_low": "text-slate-600"
+    },
+    "rules": [
+      "95% Monochrome. Color exists only to guide action or show status.",
+      "Never use pure #000000. Use #0f172a (Slate 900).",
+      "Ensure APCA contrast compliance."
+    ]
+  },
+  "layout": {
+    "grid_system": {
+      "dashboard": "Control Room Grid (Dense, Data Correlation)",
+      "marketing": "Tetris Grid (Asymmetry, Visual Tension)"
+    },
+    "spacing": {
+      "scale": ["p-1", "p-2", "p-4", "p-6", "p-8", "p-12", "p-16", "p-24", "p-32"],
+      "philosophy": "Generous spacing. Use 2-3x more than typical designs.",
+      "containers": "Containers with borders must have internal padding (p-6 or p-8)."
+    },
+    "alignment": {
+      "general": "Left-align text/forms. Center only for specific hierarchy.",
+      "mobile": "Mobile-first. Start with grid-cols-1."
+    }
+  },
+  "components": {
+    "cards": {
+      "style": "Flat background, 1px subtle border (border-slate-200), no shadow by default.",
+      "hover": "Slight lift (-translate-y-1), subtle shadow (shadow-lg), border darkens.",
+      "radius": "rounded-lg"
+    },
+    "buttons": {
+      "primary": "bg-slate-900 text-white hover:bg-slate-800 rounded-md font-medium px-6 py-2.5",
+      "secondary": "bg-white border border-slate-200 text-slate-900 hover:bg-slate-50 rounded-md font-medium px-6 py-2.5",
+      "ghost": "text-slate-600 hover:text-slate-900 hover:bg-slate-100 rounded-md px-4 py-2"
+    },
+    "inputs": {
+      "style": "bg-white border border-slate-200 rounded-md px-4 py-2.5 focus:ring-2 focus:ring-slate-900 focus:border-transparent transition-all"
+    },
+    "navigation": {
+      "sidebar": "Fixed left, bg-slate-50/50 border-r border-slate-200, w-64",
+      "topbar": "Sticky top, glassmorphism (bg-white/80 backdrop-blur-md), border-b border-slate-200"
+    }
+  },
+  "visual_enhancers": {
+    "glassmorphism": {
+      "usage": "Sticky Headers, Modals, Toasts",
+      "classes": "bg-white/80 backdrop-blur-xl border border-white/20 shadow-sm"
+    },
+    "neumorphism": {
+      "usage": "Dashboard Widgets (Subtle)",
+      "classes": "bg-white shadow-sm border border-slate-100"
+    },
+    "textures": {
+      "usage": "Subtle noise on backgrounds to kill digital flatness",
+      "css": "background-image: url(\"data:image/svg+xml,...(noise pattern)...\")"
+    },
+    "shadows": {
+      "layered": "shadow-sm for depth, shadow-xl for modals"
+    }
+  },
+  "assets": {
+    "images": {
+      "avatars": [
+        {
+          "url": "https://images.unsplash.com/photo-1672685667592-0392f458f46f?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1Nzh8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjBoZWFkc2hvdCUyMHBvcnRyYWl0fGVufDB8fHx8MTc2NzkyNDExN3ww&ixlib=rb-4.1.0&q=85",
+          "description": "Man in black hoodie",
+          "category": "team_member"
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1655249493799-9cee4fe983bb?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1Nzh8MHwxfHNlYXJjaHwyfHxwcm9mZXNzaW9uYWwlMjBoZWFkc2hvdCUyMHBvcnRyYWl0fGVufDB8fHx8MTc2NzkyNDExN3ww&ixlib=rb-4.1.0&q=85",
+          "description": "Person in grey sweater",
+          "category": "team_member"
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1655249481446-25d575f1c054?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1Nzh8MHwxfHNlYXJjaHwzfHxwcm9mZXNzaW9uYWwlMjBoZWFkc2hvdCUyMHBvcnRyYWl0fGVufDB8fHx8MTc2NzkyNDExN3ww&ixlib=rb-4.1.0&q=85",
+          "description": "Woman in blue dress",
+          "category": "team_member"
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1576558656222-ba66febe3dec?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1Nzh8MHwxfHNlYXJjaHw0fHxwcm9mZXNzaW9uYWwlMjBoZWFkc2hvdCUyMHBvcnRyYWl0fGVufDB8fHx8MTc2NzkyNDExN3ww&ixlib=rb-4.1.0&q=85",
+          "description": "Man in grey jacket",
+          "category": "team_member"
+        }
+      ],
+      "logos": [
+        {
+          "url": "https://images.unsplash.com/photo-1615438799799-4c5a3ca146bf?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2MzR8MHwxfHNlYXJjaHwxfHxhYnN0cmFjdCUyMGdlb21ldHJpYyUyMHRlY2hub2xvZ3klMjBsb2dvJTIwd2hpdGUlMjBiYWNrZ3JvdW5kfGVufDB8fHx8MTc2Nzk0MDkzMHww&ixlib=rb-4.1.0&q=85",
+          "description": "Abstract geometric sculpture",
+          "category": "brand_logo"
+        }
+      ]
+    },
+    "icons": {
+      "library": "lucide-react",
+      "style": "Stroke width 1.5px or 2px, consistent sizing (w-5 h-5)"
+    }
+  },
+  "tech_stack": {
+    "frontend": "React, Tailwind CSS, Shadcn UI",
+    "backend": "FastAPI, PostgreSQL",
+    "charts": "Recharts (via Shadcn Charts)"
+  },
+  "instructions_to_main_agent": [
+    "Follow the 'Swiss & High-Contrast' archetype strictly.",
+    "Use 'Manrope' for all headings. Import it in index.css.",
+    "Use 'Inter' for body text.",
+    "Do not use gradients for backgrounds. Use solid colors or subtle noise textures.",
+    "Ensure all interactive elements have data-testid attributes.",
+    "Use Shadcn components for complex interactions (Dialog, Popover, etc.) but customize their styling to match the design system.",
+    "Implement the 'Control Room' grid for the dashboard.",
+    "Use the provided image URLs for avatars and logos.",
+    "Create a 'Layout' component that handles the sidebar and topbar structure.",
+    "Use 'sonner' for toast notifications.",
+    "Ensure the app is responsive (mobile-first)."
+  ],
+  "universal_guidelines": [
+    "Avoid 'AI slop' aesthetic (generic centered layouts, gradients).",
+    "Create depth through layered design elements.",
+    "Use glassmorphism effects with backdrop filters.",
+    "Do not apply universal transitions (transition: all).",
+    "Do not center align the app container.",
+    "Every interaction needs micro-animations.",
+    "Use 2-3x more spacing than feels comfortable.",
+    "Use named exports for components and default exports for pages."
+  ]
+}
