@@ -16,13 +16,20 @@ import models
 import schemas
 from auth import get_password_hash, verify_password, create_access_token, get_current_user
 
-ROOT_DIR = Path(__file__).parent
-load_dotenv(ROOT_DIR / '.env')
+if os.getenv("RENDER") != "true":
+    ROOT_DIR = Path(__file__).parent
+    load_dotenv(ROOT_DIR / ".env")
 
-Base.metadata.create_all(bind=engine)
+
+
 
 app = FastAPI()
 api_router = APIRouter(prefix='/api')
+
+@app.on_event("startup")
+def on_startup():
+    Base.metadata.create_all(bind=engine)
+
 
 @api_router.post('/auth/register', response_model=schemas.Token, status_code=status.HTTP_201_CREATED)
 async def register(user_in: schemas.UserCreate, db: Session = Depends(get_db)):
