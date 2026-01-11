@@ -80,3 +80,20 @@ agenthub/agents/youtube/db
 android-sdk/ frontend/node_modules/.cache/default-development/4.pack_
 frontend/node_modules/.cache/default-development/0.pack
 frontend/node_modules/.cache/default-development/4.pack_
+
+# ----------------------------
+# Environment variables
+# ----------------------------
+.env
+.env.*
+!.env.example
+
+# Frontend env files
+frontend/.env
+frontend/.env.*
+!frontend/.env.example
+
+# Backend env files
+backend/.env
+backend/.env.*
+!backend/.env.example
