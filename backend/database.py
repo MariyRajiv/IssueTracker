@@ -34,8 +34,12 @@ connect_args = {"sslmode": "require"} if IS_RENDER else {}
 engine = create_engine(
     DB_URL,
     pool_pre_ping=True,
-    connect_args=connect_args,
+    pool_recycle=300,
+    connect_args={
+        "sslmode": "require"
+    } if IS_RENDER else {},
 )
+
 
 # -------------------------------------------------
 # Session & Base

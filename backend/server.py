@@ -3,6 +3,7 @@ from dotenv import load_dotenv
 from starlette.middleware.cors import CORSMiddleware
 from sqlalchemy.orm import Session
 from sqlalchemy import func, case
+from sqlalchemy.exc import OperationalError
 import os
 import logging
 from pathlib import Path
@@ -10,7 +11,7 @@ from datetime import datetime,  timezone
 from typing import List, Optional, cast
 import csv
 import io
-
+import time
 from database import engine, get_db, Base
 import models
 import schemas
@@ -28,7 +29,19 @@ api_router = APIRouter(prefix='/api')
 
 @app.on_event("startup")
 def on_startup():
-    Base.metadata.create_all(bind=engine)
+    retries = 5
+    delay = 2  # seconds
+
+    for attempt in range(retries):
+        try:
+            Base.metadata.create_all(bind=engine)
+            print("✅ Database connected and tables created")
+            return
+        except OperationalError:
+            print(f"⏳ DB not ready (attempt {attempt + 1}/{retries})")
+            time.sleep(delay)
+
+    raise RuntimeError("❌ Could not connect to database after retries")
 
 
 @api_router.post('/auth/register', response_model=schemas.Token, status_code=status.HTTP_201_CREATED)
