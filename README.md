@@ -334,10 +334,6 @@ alembic upgrade head
 - Shadcn/UI for consistent components
 - Easy to maintain and extend
 
-## License
-
-MIT License - feel free to use this project for your own purposes.
-
 ## Support
 
 For issues, questions, or contributions, please open an issue on the repository.
