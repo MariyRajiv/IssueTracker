@@ -6,13 +6,12 @@ from dotenv import load_dotenv
 from pathlib import Path
 
 ROOT_DIR = Path(__file__).parent
-load_dotenv(ROOT_DIR / '.env')  # <-- loads .env
+load_dotenv(ROOT_DIR / '.env')
 
 DATABASE_URL = os.environ.get('DATABASE_URL')
 if not DATABASE_URL:
     raise ValueError("DATABASE_URL environment variable is not set")
 
-# Add SSL mode for hosted Postgres
 engine = create_engine(
     DATABASE_URL,
     connect_args={"sslmode": "require"} if "render.com" in DATABASE_URL else {}
@@ -27,3 +26,10 @@ def get_db():
         yield db
     finally:
         db.close()
+
+# Test connection immediately
+try:
+    with engine.connect() as conn:
+        print("Postgres connection successful!")
+except Exception as e:
+    print("Postgres connection failed:", e)
